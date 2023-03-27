@@ -1,0 +1,220 @@
+2022-09-22 15:46:43.961 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-09-22 15:47:28.193 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-09-22 15:47:28.197 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-09-22 15:47:48.882 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 68.886 seconds (JVM running for 71.514)
+2022-09-22 15:48:18.641 - [ebbd9ce737c282e5,ebbd9ce737c282e5,,http-nio-8080-exec-4,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663836498641
+2022-09-22 15:48:21.218 - [,,,http-nio-8080-exec-4,INFO,getRequest] - getRequest{
+
+    "code": 38,
+    "partnerCd":"OB_TOKOPEDIA",
+    "screenCd":""
+}
+2022-09-22 15:48:21.220 - [,,,http-nio-8080-exec-4,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config|Fetching Address by City = 38
+2022-09-22 15:48:21.302 - [,,,http-nio-8080-exec-4,DEBUG,logRequestResponse] - Error Message: null
+2022-09-22 16:01:34.203 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-09-22 16:02:12.411 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-09-22 16:02:12.417 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-09-22 16:02:31.795 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 61.704 seconds (JVM running for 62.917)
+2022-09-22 16:02:38.135 - [bb066013a9b681e8,bb066013a9b681e8,,http-nio-8080-exec-2,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663837358135
+2022-09-22 16:02:38.383 - [bb066013a9b681e8,bb066013a9b681e8,,http-nio-8080-exec-2,INFO,configDataByCity] - Entered in method-configDataByCity of class-WebVerificationServiceImpl at 1663837358383
+2022-09-22 16:02:38.384 - [bb066013a9b681e8,bb066013a9b681e8,,http-nio-8080-exec-2,INFO,configDataByCity] - input is:LabelMessageRequestVO [data={code=38}, getPartnerCd()=OB_TOKOPEDIA] 
+2022-09-22 16:02:41.222 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_TOKOPEDIA",
+    "screenCd": "",
+    "userId": "",
+    "data": {
+        "code": 38
+    }
+}
+2022-09-22 16:02:41.235 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config|Fetching Address by City = 38
+2022-09-22 16:02:41.378 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: null
+2022-09-22 16:02:47.182 - [,,,http-nio-8080-exec-3,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_TOKOPEDIA",
+    "screenCd": "",
+    "userId": "",
+    "data": {
+        "code": 
+    }
+}
+2022-09-22 16:02:47.182 - [,,,http-nio-8080-exec-3,ERROR,logRequestResponse] - userId is not Long type: null,
+2022-09-22 16:02:47.213 - [,,,http-nio-8080-exec-3,DEBUG,logRequestResponse] - Audit Message: null
+2022-09-22 16:02:47.213 - [,,,http-nio-8080-exec-3,DEBUG,logRequestResponse] - Error Message: null
+2022-09-22 16:03:01.539 - [28c6b13da249174d,28c6b13da249174d,,http-nio-8080-exec-5,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663837381539
+2022-09-22 16:03:01.679 - [28c6b13da249174d,28c6b13da249174d,,http-nio-8080-exec-5,INFO,configDataByCity] - Entered in method-configDataByCity of class-WebVerificationServiceImpl at 1663837381679
+2022-09-22 16:03:01.679 - [28c6b13da249174d,28c6b13da249174d,,http-nio-8080-exec-5,INFO,configDataByCity] - input is:LabelMessageRequestVO [data={code=}, getPartnerCd()=OB_TOKOPEDIA] 
+2022-09-22 16:03:01.680 - [28c6b13da249174d,28c6b13da249174d,,http-nio-8080-exec-5,INFO,codeCity] - Field language not Found in Request
+2022-09-22 16:03:01.680 - [28c6b13da249174d,28c6b13da249174d,,http-nio-8080-exec-5,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@5dd68248
+2022-09-22 16:03:01.681 - [28c6b13da249174d,28c6b13da249174d,,http-nio-8080-exec-5,ERROR,handleCustomException] - Error Track is:::-------
+2022-09-22 16:03:01.685 - [28c6b13da249174d,28c6b13da249174d,,http-nio-8080-exec-5,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-09-22 16:03:01.691 - [,,,http-nio-8080-exec-5,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_TOKOPEDIA",
+    "screenCd": "",
+    "userId": "",
+    "data": {
+        "code": ""
+    }
+}
+2022-09-22 16:03:01.692 - [,,,http-nio-8080-exec-5,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config
+2022-09-22 16:03:01.739 - [,,,http-nio-8080-exec-5,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.util.ValidateRequestUtil : method=codeCity : line=92
+2022-09-22 16:03:10.930 - [3cec59cae0f9af55,3cec59cae0f9af55,,http-nio-8080-exec-7,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663837390930
+2022-09-22 16:03:10.943 - [3cec59cae0f9af55,3cec59cae0f9af55,,http-nio-8080-exec-7,INFO,configDataByCity] - Entered in method-configDataByCity of class-WebVerificationServiceImpl at 1663837390943
+2022-09-22 16:03:10.944 - [3cec59cae0f9af55,3cec59cae0f9af55,,http-nio-8080-exec-7,INFO,configDataByCity] - input is:LabelMessageRequestVO [data={code=null}, getPartnerCd()=OB_TOKOPEDIA] 
+2022-09-22 16:03:10.944 - [3cec59cae0f9af55,3cec59cae0f9af55,,http-nio-8080-exec-7,INFO,codeCity] - Field language not Found in Request
+2022-09-22 16:03:10.944 - [3cec59cae0f9af55,3cec59cae0f9af55,,http-nio-8080-exec-7,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@43a5ce0d
+2022-09-22 16:03:10.944 - [3cec59cae0f9af55,3cec59cae0f9af55,,http-nio-8080-exec-7,ERROR,handleCustomException] - Error Track is:::-------
+2022-09-22 16:03:10.947 - [3cec59cae0f9af55,3cec59cae0f9af55,,http-nio-8080-exec-7,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-09-22 16:03:10.950 - [,,,http-nio-8080-exec-7,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_TOKOPEDIA",
+    "screenCd": "",
+    "userId": "",
+    "data": {
+        "code": null
+    }
+}
+2022-09-22 16:03:10.951 - [,,,http-nio-8080-exec-7,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config
+2022-09-22 16:03:10.978 - [,,,http-nio-8080-exec-7,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.util.ValidateRequestUtil : method=codeCity : line=92
+2022-09-22 16:03:52.878 - [bec3dba82b1b3245,bec3dba82b1b3245,,http-nio-8080-exec-9,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663837432878
+2022-09-22 16:03:53.100 - [bec3dba82b1b3245,bec3dba82b1b3245,,http-nio-8080-exec-9,INFO,labelMessage] - Field data not Found in Request
+2022-09-22 16:03:53.101 - [bec3dba82b1b3245,bec3dba82b1b3245,,http-nio-8080-exec-9,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@2462b544
+2022-09-22 16:03:53.102 - [bec3dba82b1b3245,bec3dba82b1b3245,,http-nio-8080-exec-9,ERROR,handleCustomException] - Error Track is:::-------
+2022-09-22 16:03:53.105 - [bec3dba82b1b3245,bec3dba82b1b3245,,http-nio-8080-exec-9,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-09-22 16:03:53.107 - [,,,http-nio-8080-exec-9,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_TOKOPEDIA",
+    "screenCd": "",
+    "userId": ""
+}
+2022-09-22 16:03:53.108 - [,,,http-nio-8080-exec-9,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config
+2022-09-22 16:03:53.223 - [,,,http-nio-8080-exec-9,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.util.ValidateRequestUtil : method=labelMessage : line=57
+2022-09-22 16:04:06.047 - [fc2093398d9cbb90,fc2093398d9cbb90,,http-nio-8080-exec-1,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663837446047
+2022-09-22 16:04:06.061 - [fc2093398d9cbb90,fc2093398d9cbb90,,http-nio-8080-exec-1,INFO,configDataByCity] - Entered in method-configDataByCity of class-WebVerificationServiceImpl at 1663837446061
+2022-09-22 16:04:06.061 - [fc2093398d9cbb90,fc2093398d9cbb90,,http-nio-8080-exec-1,INFO,configDataByCity] - input is:LabelMessageRequestVO [data={code=38}, getPartnerCd()=OB_TOKOPEDIA] 
+2022-09-22 16:04:08.520 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_TOKOPEDIA",
+    "screenCd": "",
+    "data": {
+        "code": 38
+    }
+}
+2022-09-22 16:04:08.521 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config|Fetching Address by City = 38
+2022-09-22 16:04:08.576 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: null
+2022-09-22 16:04:14.195 - [a0455b1539f0a471,a0455b1539f0a471,,http-nio-8080-exec-2,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663837454195
+2022-09-22 16:04:14.209 - [a0455b1539f0a471,a0455b1539f0a471,,http-nio-8080-exec-2,INFO,configDataByCity] - Entered in method-configDataByCity of class-WebVerificationServiceImpl at 1663837454209
+2022-09-22 16:04:14.210 - [a0455b1539f0a471,a0455b1539f0a471,,http-nio-8080-exec-2,INFO,configDataByCity] - input is:LabelMessageRequestVO [data={code=38}, getPartnerCd()=OB_TOKOPEDIA] 
+2022-09-22 16:04:16.594 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_TOKOPEDIA",
+    "data": {
+        "code": 38
+    }
+}
+2022-09-22 16:04:16.597 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config|Fetching Address by City = 38
+2022-09-22 16:04:16.622 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: null
+2022-09-22 16:04:32.736 - [94e116e3bf99157c,94e116e3bf99157c,,http-nio-8080-exec-3,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663837472736
+2022-09-22 16:04:32.753 - [94e116e3bf99157c,94e116e3bf99157c,,http-nio-8080-exec-3,INFO,labelMessage] - Field partnerCd not Found in Request
+2022-09-22 16:04:32.754 - [94e116e3bf99157c,94e116e3bf99157c,,http-nio-8080-exec-3,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@386ee5b3
+2022-09-22 16:04:32.754 - [94e116e3bf99157c,94e116e3bf99157c,,http-nio-8080-exec-3,ERROR,handleCustomException] - Error Track is:::-------
+2022-09-22 16:04:32.758 - [94e116e3bf99157c,94e116e3bf99157c,,http-nio-8080-exec-3,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-09-22 16:04:32.760 - [,,,http-nio-8080-exec-3,INFO,getRequest] - getRequest{
+    "data": {
+        "code": 38
+    }
+}
+2022-09-22 16:04:32.761 - [,,,http-nio-8080-exec-3,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config
+2022-09-22 16:04:32.783 - [,,,http-nio-8080-exec-3,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.util.ValidateRequestUtil : method=labelMessage : line=44
+2022-09-22 16:24:12.412 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-09-22 16:24:47.325 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-09-22 16:24:47.331 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-09-22 16:25:08.338 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 62.438 seconds (JVM running for 65.388)
+2022-09-22 16:26:01.587 - [942db3e8787908ab,942db3e8787908ab,,http-nio-8080-exec-1,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663838761587
+2022-09-22 16:26:02.197 - [942db3e8787908ab,942db3e8787908ab,,http-nio-8080-exec-1,INFO,configDataByCity] - Entered in method-configDataByCity of class-WebVerificationServiceImpl at 1663838762197
+2022-09-22 16:26:02.198 - [942db3e8787908ab,942db3e8787908ab,,http-nio-8080-exec-1,INFO,configDataByCity] - input is:WebVerifyCityCodeVO [data={code=38}, getPartnerCd()=OB_TOKOPEDIA] 
+2022-09-22 16:26:05.647 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_TOKOPEDIA",
+    "screenCd": "",
+    "data": {
+        "code": 38
+    }
+}
+2022-09-22 16:26:05.657 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config|Fetching Address by City = 38
+2022-09-22 16:26:05.833 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: null
+2022-09-22 16:37:03.730 - [09814350bef271e1,09814350bef271e1,,http-nio-8080-exec-5,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663839423730
+2022-09-22 16:37:03.748 - [09814350bef271e1,09814350bef271e1,,http-nio-8080-exec-5,INFO,configDataByCity] - Entered in method-configDataByCity of class-WebVerificationServiceImpl at 1663839423748
+2022-09-22 16:37:03.749 - [09814350bef271e1,09814350bef271e1,,http-nio-8080-exec-5,INFO,configDataByCity] - input is:WebVerifyCityCodeVO [data={code=null}, getPartnerCd()=OB_TOKOPEDIA] 
+2022-09-22 16:37:03.750 - [09814350bef271e1,09814350bef271e1,,http-nio-8080-exec-5,INFO,codeCity1] - Field language not Found in Request
+2022-09-22 16:37:03.755 - [09814350bef271e1,09814350bef271e1,,http-nio-8080-exec-5,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@27c46e61
+2022-09-22 16:37:03.755 - [09814350bef271e1,09814350bef271e1,,http-nio-8080-exec-5,ERROR,handleCustomException] - Error Track is:::-------
+2022-09-22 16:37:03.758 - [09814350bef271e1,09814350bef271e1,,http-nio-8080-exec-5,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-09-22 16:37:03.763 - [,,,http-nio-8080-exec-5,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_TOKOPEDIA",
+    "screenCd": "",
+    "data": {
+        "code": null
+    }
+}
+2022-09-22 16:37:03.764 - [,,,http-nio-8080-exec-5,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config
+2022-09-22 16:37:03.787 - [,,,http-nio-8080-exec-5,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.util.ValidateRequestUtil : method=codeCity1 : line=121
+2022-09-22 16:38:42.898 - [6aa49fc142e9855f,6aa49fc142e9855f,,http-nio-8080-exec-7,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663839522898
+2022-09-22 16:38:42.927 - [6aa49fc142e9855f,6aa49fc142e9855f,,http-nio-8080-exec-7,INFO,codeCity] - Field partnerCd not Found in Request
+2022-09-22 16:38:42.927 - [6aa49fc142e9855f,6aa49fc142e9855f,,http-nio-8080-exec-7,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@39378a20
+2022-09-22 16:38:42.927 - [6aa49fc142e9855f,6aa49fc142e9855f,,http-nio-8080-exec-7,ERROR,handleCustomException] - Error Track is:::-------
+2022-09-22 16:38:42.930 - [6aa49fc142e9855f,6aa49fc142e9855f,,http-nio-8080-exec-7,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-09-22 16:38:42.932 - [,,,http-nio-8080-exec-7,INFO,getRequest] - getRequest{
+    "screenCd": "",
+    "data": {
+        "code": 38
+    }
+}
+2022-09-22 16:38:42.932 - [,,,http-nio-8080-exec-7,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config
+2022-09-22 16:38:42.964 - [,,,http-nio-8080-exec-7,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.util.ValidateRequestUtil : method=codeCity : line=91
+2022-09-22 16:38:53.330 - [,,,http-nio-8080-exec-9,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_TOKOPEDIA",
+    "screenCd": "",
+    "data": {
+        "code": 00
+    }
+}
+2022-09-22 16:38:53.331 - [,,,http-nio-8080-exec-9,ERROR,logRequestResponse] - userId is not Long type: null,
+2022-09-22 16:38:53.359 - [,,,http-nio-8080-exec-9,DEBUG,logRequestResponse] - Audit Message: null
+2022-09-22 16:38:53.359 - [,,,http-nio-8080-exec-9,DEBUG,logRequestResponse] - Error Message: null
+2022-09-22 16:39:01.004 - [4aaf79c1c5c94c35,4aaf79c1c5c94c35,,http-nio-8080-exec-2,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663839541004
+2022-09-22 16:39:01.018 - [4aaf79c1c5c94c35,4aaf79c1c5c94c35,,http-nio-8080-exec-2,INFO,configDataByCity] - Entered in method-configDataByCity of class-WebVerificationServiceImpl at 1663839541018
+2022-09-22 16:39:01.019 - [4aaf79c1c5c94c35,4aaf79c1c5c94c35,,http-nio-8080-exec-2,INFO,configDataByCity] - input is:WebVerifyCityCodeVO [data={code=999}, getPartnerCd()=OB_TOKOPEDIA] 
+2022-09-22 16:39:01.103 - [4aaf79c1c5c94c35,4aaf79c1c5c94c35,,http-nio-8080-exec-2,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@762b1385
+2022-09-22 16:39:01.104 - [4aaf79c1c5c94c35,4aaf79c1c5c94c35,,http-nio-8080-exec-2,ERROR,handleCustomException] - Error Track is:::-------
+2022-09-22 16:39:01.106 - [4aaf79c1c5c94c35,4aaf79c1c5c94c35,,http-nio-8080-exec-2,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-09-22 16:39:01.108 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_TOKOPEDIA",
+    "screenCd": "",
+    "data": {
+        "code": 999
+    }
+}
+2022-09-22 16:39:01.108 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config|Fetching Address by City = 999
+2022-09-22 16:39:01.134 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.service.impl.WebVerificationServiceImpl : method=configDataByCity : line=348
+2022-09-22 16:39:38.930 - [19c915e6152b7147,19c915e6152b7147,,http-nio-8080-exec-3,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663839578930
+2022-09-22 16:39:38.949 - [19c915e6152b7147,19c915e6152b7147,,http-nio-8080-exec-3,INFO,configDataByCity] - Entered in method-configDataByCity of class-WebVerificationServiceImpl at 1663839578949
+2022-09-22 16:39:38.950 - [19c915e6152b7147,19c915e6152b7147,,http-nio-8080-exec-3,INFO,configDataByCity] - input is:WebVerifyCityCodeVO [data={code=38}, getPartnerCd()=OB_AJAH] 
+2022-09-22 16:39:38.964 - [19c915e6152b7147,19c915e6152b7147,,http-nio-8080-exec-3,INFO,configDataByCity] - Partner OB_AJAH not found in Database
+2022-09-22 16:39:38.965 - [19c915e6152b7147,19c915e6152b7147,,http-nio-8080-exec-3,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@5c2f1607
+2022-09-22 16:39:38.965 - [19c915e6152b7147,19c915e6152b7147,,http-nio-8080-exec-3,ERROR,handleCustomException] - Error Track is:::-------
+2022-09-22 16:39:38.967 - [19c915e6152b7147,19c915e6152b7147,,http-nio-8080-exec-3,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-09-22 16:39:38.970 - [,,,http-nio-8080-exec-3,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_AJAH",
+    "screenCd": "",
+    "data": {
+        "code": 38
+    }
+}
+2022-09-22 16:39:38.971 - [,,,http-nio-8080-exec-3,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config
+2022-09-22 16:39:39.010 - [,,,http-nio-8080-exec-3,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.service.impl.WebVerificationServiceImpl : method=configDataByCity : line=325
+2022-09-22 16:40:17.561 - [8ea5c1ce2b2525c0,8ea5c1ce2b2525c0,,http-nio-8080-exec-5,INFO,configDataBycity] - Entered in method-configDataBycity of class-WebVerificationController at 1663839617561
+2022-09-22 16:40:17.575 - [8ea5c1ce2b2525c0,8ea5c1ce2b2525c0,,http-nio-8080-exec-5,INFO,configDataByCity] - Entered in method-configDataByCity of class-WebVerificationServiceImpl at 1663839617575
+2022-09-22 16:40:17.576 - [8ea5c1ce2b2525c0,8ea5c1ce2b2525c0,,http-nio-8080-exec-5,INFO,configDataByCity] - input is:WebVerifyCityCodeVO [data={code=38}, getPartnerCd()=OB_TOKOPEDIA] 
+2022-09-22 16:40:20.269 - [,,,http-nio-8080-exec-5,INFO,getRequest] - getRequest{
+    "partnerCd": "OB_TOKOPEDIA",
+    "screenCd": "",
+    "data": {
+        "code": 38
+    }
+}
+2022-09-22 16:40:20.270 - [,,,http-nio-8080-exec-5,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config|Fetching Address by City = 38
+2022-09-22 16:40:20.296 - [,,,http-nio-8080-exec-5,DEBUG,logRequestResponse] - Error Message: null

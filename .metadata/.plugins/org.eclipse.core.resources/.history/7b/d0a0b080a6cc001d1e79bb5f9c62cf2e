@@ -1,0 +1,5 @@
+2022-12-09 10:25:41.638 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-12-09 10:26:10.043 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-12-09 10:26:40.518 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-12-09 10:26:40.523 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-12-09 10:27:01.453 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 55.404 seconds (JVM running for 58.302)

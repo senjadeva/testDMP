@@ -1,0 +1,34 @@
+server:
+  servlet:
+    context-path: /api/dev
+---
+spring:
+    profiles: dev
+    name: dev-YAML
+    datasource:
+      url: jdbc:postgresql://10.197.19.134:5432/postgres
+      username: ENC(zUupXG6aTVNRWRvoYxIRRKNIgL7/nC5d)
+      password: ENC(5HUn7T4D5TSRLgEYEjN1DKJN5aAGhyRW)
+      tomcat:
+        max-active: 5
+        max-idle: 10000
+
+    jpa:
+      generate-ddl: false
+      database-platform : com.danamon.onboarding.dialect.MyPostgreSQL94Dialect
+    jackson:
+      serialization:
+        write-dates-as-timestamps: false
+---
+environment: dev
+---
+external:
+  otp:
+    url: http://10.28.113.164:8080/bdmn/v1/onboarding/user/mobile/otp
+  uservalidate:
+    url: http://10.28.113.164:8080/bdmn/v1/onboarding/user/validateuser
+  email:
+    url: http://10.28.113.164:8080/bdmn/v1/onboarding/user/email/send
+jasypt:
+  encryptor:
+    password: bD4n4M0N^2OI7@

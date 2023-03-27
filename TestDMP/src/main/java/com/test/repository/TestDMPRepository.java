@@ -1,0 +1,12 @@
+package com.test.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.test.entity.TestDMPEntity;
+
+public interface TestDMPRepository extends JpaRepository<TestDMPEntity, Long> {
+
+	@Query("select a from TestDMPEntity a where a.username = ?1 and a.password = ?2")
+	TestDMPEntity findOneByUsernameAndPassword(String username, String password);
+}

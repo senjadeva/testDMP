@@ -1,0 +1,10 @@
+package com.test.config;
+
+@Configuration
+@EnableTransactionManagement
+@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactory",
+						transactionManagerRef = "transactionManager"
+						, basePackages = { "com.test.repository" })
+public class TestDMPDBConfig {
+
+}

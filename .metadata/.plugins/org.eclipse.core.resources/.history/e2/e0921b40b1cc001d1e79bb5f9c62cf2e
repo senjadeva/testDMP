@@ -1,0 +1,20 @@
+server:
+  servlet:
+    context-path: /api/prod
+---
+spring:
+    profiles: production
+    name: prod-YAML
+    datasource:
+      url: jdbc:postgresql://omnidb.danamon.co.id:5432/omnidb
+      username: omniapp
+      password: OmniApp#456
+      driver-class-name: org.postgresql.Driver
+      platform: postgres
+    jpa:
+      generate-ddl: false
+    jackson:
+      serialization:
+        write-dates-as-timestamps: false
+---
+environment: production

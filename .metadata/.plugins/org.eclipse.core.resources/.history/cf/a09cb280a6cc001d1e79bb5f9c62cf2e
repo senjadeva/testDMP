@@ -1,0 +1,502 @@
+2022-10-19 11:35:28.793 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 11:35:48.757 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 11:35:48.759 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 11:36:00.119 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 33.899 seconds (JVM running for 37.001)
+2022-10-19 11:36:33.131 - [fc261dc780785d2a,fc261dc780785d2a,,http-nio-8080-exec-1,DEBUG,doFilter] - request Body{
+    "code":"18"
+}
+2022-10-19 11:36:41.465 - [be0d570ef1ea3f08,be0d570ef1ea3f08,,http-nio-8080-exec-3,DEBUG,doFilter] - request Body{
+    "code":"18"
+}
+2022-10-19 11:37:23.846 - [8434ac8c664bca43,8434ac8c664bca43,,http-nio-8080-exec-4,DEBUG,doFilter] - request Body{
+    "code":"18"
+}
+2022-10-19 11:37:23.857 - [8434ac8c664bca43,8434ac8c664bca43,,http-nio-8080-exec-4,DEBUG,verifyToken] - token expiry reached
+2022-10-19 11:37:23.858 - [8434ac8c664bca43,8434ac8c664bca43,,http-nio-8080-exec-4,DEBUG,doFilter] - after getting keycloakemail-user email- isdbuserFlag true isrequserFlag false
+2022-10-19 11:39:35.561 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 11:39:50.850 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 11:39:50.854 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 11:39:52.142 - [,,,main,ERROR,reportFailure] - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configController': Unsatisfied dependency expressed through field 'configService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'request-timeout' in value "${request-timeout}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.danamon.onboarding.ConfigServiceApplication.main(ConfigServiceApplication.java:20)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'request-timeout' in value "${request-timeout}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:380)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'request-timeout' in value "${request-timeout}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:851)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	... 30 common frames omitted
+2022-10-19 11:40:36.423 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 11:40:53.014 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 11:40:53.017 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 11:40:55.276 - [,,,main,ERROR,reportFailure] - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configController': Unsatisfied dependency expressed through field 'configService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'request-timeout' in value "${request-timeout}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.danamon.onboarding.ConfigServiceApplication.main(ConfigServiceApplication.java:20)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'request-timeout' in value "${request-timeout}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:380)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'request-timeout' in value "${request-timeout}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:851)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	... 30 common frames omitted
+2022-10-19 11:41:26.327 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 11:41:46.126 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 11:41:46.133 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 11:42:03.482 - [,,,main,ERROR,report] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2022-10-19 11:42:50.241 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 11:43:05.644 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 11:43:05.647 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 11:43:15.960 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 27.523 seconds (JVM running for 28.685)
+2022-10-19 11:43:25.058 - [25d07a8c801f68d6,25d07a8c801f68d6,,http-nio-8080-exec-2,DEBUG,doFilter] - request Body{
+    "code":"18"
+}
+2022-10-19 11:50:19.118 - [beb98434eb5b3a78,beb98434eb5b3a78,,http-nio-8080-exec-5,DEBUG,doFilter] - request Body{
+    "code":"18"
+}
+2022-10-19 11:54:06.387 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 11:54:21.670 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 11:54:21.673 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 11:54:32.115 - [,,,main,ERROR,report] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2022-10-19 11:54:44.056 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 11:54:59.042 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 11:54:59.045 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 11:55:09.413 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 27.262 seconds (JVM running for 28.422)
+2022-10-19 12:10:51.100 - [1b775a18fab3090c,1b775a18fab3090c,,http-nio-8080-exec-3,DEBUG,doFilter] - request Body{
+    "code":"18"
+}
+2022-10-19 12:11:27.253 - [fba289490d5531d1,fba289490d5531d1,,http-nio-8080-exec-2,INFO,getAddressDetailsByCity] - Entered in method-getAddressDetailsByCity of class-ConfigController at 1666156287253
+2022-10-19 12:11:28.325 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 12:11:28.329 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config|Fetching Address by City = 18
+2022-10-19 12:11:28.411 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: null
+2022-10-19 12:12:11.999 - [90c71e64fdf2f9e2,90c71e64fdf2f9e2,,http-nio-8080-exec-4,INFO,getAddressDetailsByCity] - Entered in method-getAddressDetailsByCity of class-ConfigController at 1666156331999
+2022-10-19 12:12:12.017 - [,,,http-nio-8080-exec-4,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 12:12:12.018 - [,,,http-nio-8080-exec-4,DEBUG,logRequestResponse] - Audit Message: Fetching Address by City Config
+2022-10-19 12:12:12.036 - [,,,http-nio-8080-exec-4,DEBUG,logRequestResponse] - Error Message: null
+2022-10-19 12:12:22.514 - [f9e885cdf37b9c3d,f9e885cdf37b9c3d,,http-nio-8080-exec-5,DEBUG,doFilter] - request Body{
+    "code":"18"
+}
+2022-10-19 12:14:25.763 - [35cee234c38a31d1,35cee234c38a31d1,,http-nio-8080-exec-8,DEBUG,doFilter] - request Body{
+    "code":"18"
+}
+2022-10-19 12:14:58.726 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 12:15:14.082 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 12:15:14.085 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 12:15:24.857 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 28.088 seconds (JVM running for 29.286)
+2022-10-19 12:17:07.215 - [38690f7e1c89159c,38690f7e1c89159c,,http-nio-8080-exec-2,DEBUG,doFilter] - request Body{
+    "code":"18"
+}
+2022-10-19 12:18:13.527 - [40e72be6f86d7f2b,40e72be6f86d7f2b,,http-nio-8080-exec-5,DEBUG,doFilter] - request Body{
+    "code":"18"
+}
+2022-10-19 12:19:27.617 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 12:19:43.318 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 12:19:43.321 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 12:19:54.062 - [,,,main,ERROR,report] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2022-10-19 12:20:05.387 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 12:20:21.270 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 12:20:21.272 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 12:20:37.249 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 33.739 seconds (JVM running for 34.972)
+2022-10-19 13:27:45.895 - [49e27986a1cb1487,49e27986a1cb1487,,http-nio-8080-exec-2,DEBUG,doFilter] - request Body{
+    "code":"18"
+}
+2022-10-19 13:34:11.097 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 13:34:34.057 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 13:34:34.061 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 13:34:50.087 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 42.016 seconds (JVM running for 43.71)
+2022-10-19 13:50:06.081 - [316e7d4dc307b8fb,316e7d4dc307b8fb,,http-nio-8080-exec-2,DEBUG,doFilter] - request Body{
+    "code":"18"
+}
+2022-10-19 13:50:13.320 - [b55fc923a058151a,b55fc923a058151a,,http-nio-8080-exec-3,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666162213320
+2022-10-19 13:50:13.529 - [b55fc923a058151a,b55fc923a058151a,,http-nio-8080-exec-3,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@44ef0546
+2022-10-19 13:50:13.531 - [b55fc923a058151a,b55fc923a058151a,,http-nio-8080-exec-3,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 13:50:13.538 - [b55fc923a058151a,b55fc923a058151a,,http-nio-8080-exec-3,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-10-19 13:50:13.668 - [,,,http-nio-8080-exec-3,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 13:50:13.673 - [,,,http-nio-8080-exec-3,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = {
+    "code":"18"
+}
+2022-10-19 13:50:13.775 - [,,,http-nio-8080-exec-3,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.service.impl.ConfigServiceImpl : method=getConfigContentDetailsByNCBSProfession : line=1362
+2022-10-19 13:52:15.414 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 13:52:39.166 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 13:52:39.169 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 13:52:55.901 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 43.535 seconds (JVM running for 45.844)
+2022-10-19 13:53:11.932 - [d6b703a37e2ded5d,d6b703a37e2ded5d,,http-nio-8080-exec-2,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666162391932
+2022-10-19 13:53:12.147 - [d6b703a37e2ded5d,d6b703a37e2ded5d,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - profession null
+2022-10-19 13:53:12.156 - [d6b703a37e2ded5d,d6b703a37e2ded5d,,http-nio-8080-exec-2,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@8f1d8fd
+2022-10-19 13:53:12.157 - [d6b703a37e2ded5d,d6b703a37e2ded5d,,http-nio-8080-exec-2,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 13:53:12.165 - [d6b703a37e2ded5d,d6b703a37e2ded5d,,http-nio-8080-exec-2,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-10-19 13:53:12.283 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 13:53:12.290 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = {
+    "code":"18"
+}
+2022-10-19 13:53:12.405 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.service.impl.ConfigServiceImpl : method=getConfigContentDetailsByNCBSProfession : line=1364
+2022-10-19 13:55:30.568 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 13:55:56.976 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 13:55:56.979 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 13:56:12.309 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 44.431 seconds (JVM running for 46.34)
+2022-10-19 13:56:16.075 - [f0a516a0057db2eb,f0a516a0057db2eb,,http-nio-8080-exec-1,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666162576075
+2022-10-19 13:56:16.207 - [f0a516a0057db2eb,f0a516a0057db2eb,,http-nio-8080-exec-1,INFO,getConfigContentDetailsByNCBSProfession] - profession null
+2022-10-19 13:56:16.213 - [f0a516a0057db2eb,f0a516a0057db2eb,,http-nio-8080-exec-1,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@134c4b6d
+2022-10-19 13:56:16.214 - [f0a516a0057db2eb,f0a516a0057db2eb,,http-nio-8080-exec-1,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 13:56:16.221 - [f0a516a0057db2eb,f0a516a0057db2eb,,http-nio-8080-exec-1,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-10-19 13:56:16.301 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 13:56:16.307 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = {
+    "code":"18"
+}
+2022-10-19 13:56:16.409 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.service.impl.ConfigServiceImpl : method=getConfigContentDetailsByNCBSProfession : line=1356
+2022-10-19 13:57:11.207 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 13:57:34.210 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 13:57:34.213 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 13:57:51.776 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 43.69 seconds (JVM running for 45.624)
+2022-10-19 13:58:03.268 - [70537c9693246ea8,70537c9693246ea8,,http-nio-8080-exec-1,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666162683268
+2022-10-19 13:58:03.361 - [70537c9693246ea8,70537c9693246ea8,,http-nio-8080-exec-1,INFO,getConfigContentDetailsByNCBSProfession] - typeProfession ncbsProfession code {
+    "code":"18"
+}
+2022-10-19 13:58:03.371 - [70537c9693246ea8,70537c9693246ea8,,http-nio-8080-exec-1,INFO,getConfigContentDetailsByNCBSProfession] - profession null
+2022-10-19 13:58:03.374 - [70537c9693246ea8,70537c9693246ea8,,http-nio-8080-exec-1,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@6640bc8
+2022-10-19 13:58:03.375 - [70537c9693246ea8,70537c9693246ea8,,http-nio-8080-exec-1,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 13:58:03.380 - [70537c9693246ea8,70537c9693246ea8,,http-nio-8080-exec-1,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-10-19 13:58:03.438 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 13:58:03.442 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = {
+    "code":"18"
+}
+2022-10-19 13:58:03.561 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.service.impl.ConfigServiceImpl : method=getConfigContentDetailsByNCBSProfession : line=1358
+2022-10-19 14:01:33.506 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 14:02:02.037 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 14:02:02.041 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 14:02:19.737 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 49.506 seconds (JVM running for 51.762)
+2022-10-19 14:02:32.692 - [7175987027e7530b,7175987027e7530b,,http-nio-8080-exec-1,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666162952692
+2022-10-19 14:02:32.818 - [7175987027e7530b,7175987027e7530b,,http-nio-8080-exec-1,INFO,getConfigContentDetailsByNCBSProfession] - typeProfession ncbsProfession : code 18
+2022-10-19 14:02:32.830 - [7175987027e7530b,7175987027e7530b,,http-nio-8080-exec-1,INFO,getConfigContentDetailsByNCBSProfession] - profession com.danamon.onboarding.entity.ConfigContentEntity@43b81e90
+2022-10-19 14:02:32.852 - [7175987027e7530b,7175987027e7530b,,http-nio-8080-exec-1,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@143885f7
+2022-10-19 14:02:32.853 - [7175987027e7530b,7175987027e7530b,,http-nio-8080-exec-1,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 14:02:32.864 - [7175987027e7530b,7175987027e7530b,,http-nio-8080-exec-1,ERROR,handleCustomException] - Parameter value [876] did not match expected type [java.lang.String (n/a)]; nested exception is java.lang.IllegalArgumentException: Parameter value [876] did not match expected type [java.lang.String (n/a)]
+2022-10-19 14:02:32.954 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 14:02:32.963 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=18]
+2022-10-19 14:02:33.096 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: Message=Parameter value [876] did not match expected type [java.lang.String (n/a)]; nested exception is java.lang.IllegalArgumentException: Parameter value [876] did not match expected type [java.lang.String (n/a)] : in class=org.springframework.orm.jpa.EntityManagerFactoryUtils : method=convertJpaAccessExceptionIfPossible : line=373
+2022-10-19 14:11:32.711 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 14:11:52.270 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 14:11:52.275 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 14:12:08.095 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 37.787 seconds (JVM running for 39.155)
+2022-10-19 14:13:37.232 - [d63b241ec7160ba8,d63b241ec7160ba8,,http-nio-8080-exec-2,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666163617231
+2022-10-19 14:13:37.371 - [d63b241ec7160ba8,d63b241ec7160ba8,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - typeProfession ncbsProfession : code 18
+2022-10-19 14:13:37.380 - [d63b241ec7160ba8,d63b241ec7160ba8,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - profession com.danamon.onboarding.entity.ConfigContentEntity@2a8e5baa
+2022-10-19 14:13:37.381 - [d63b241ec7160ba8,d63b241ec7160ba8,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - typeTypeOfIndustry [typeOfIndustry] : IDprofession 876
+2022-10-19 14:13:37.396 - [d63b241ec7160ba8,d63b241ec7160ba8,,http-nio-8080-exec-2,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@1035bf2b
+2022-10-19 14:13:37.397 - [d63b241ec7160ba8,d63b241ec7160ba8,,http-nio-8080-exec-2,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 14:13:37.406 - [d63b241ec7160ba8,d63b241ec7160ba8,,http-nio-8080-exec-2,ERROR,handleCustomException] - Parameter value [876] did not match expected type [java.lang.String (n/a)]; nested exception is java.lang.IllegalArgumentException: Parameter value [876] did not match expected type [java.lang.String (n/a)]
+2022-10-19 14:13:37.482 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 14:13:37.488 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=18]
+2022-10-19 14:13:37.608 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: Message=Parameter value [876] did not match expected type [java.lang.String (n/a)]; nested exception is java.lang.IllegalArgumentException: Parameter value [876] did not match expected type [java.lang.String (n/a)] : in class=org.springframework.orm.jpa.EntityManagerFactoryUtils : method=convertJpaAccessExceptionIfPossible : line=373
+2022-10-19 14:18:32.474 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 14:19:14.224 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 14:19:14.226 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 14:19:38.825 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 68.838 seconds (JVM running for 71.104)
+2022-10-19 14:19:42.279 - [6d744f6192dae16f,6d744f6192dae16f,,http-nio-8080-exec-1,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666163982279
+2022-10-19 14:19:42.394 - [6d744f6192dae16f,6d744f6192dae16f,,http-nio-8080-exec-1,INFO,getConfigContentDetailsByNCBSProfession] - typeTypeOfIndustry typeOfIndustry : IDprofession 876
+2022-10-19 14:19:42.407 - [6d744f6192dae16f,6d744f6192dae16f,,http-nio-8080-exec-1,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@24643804
+2022-10-19 14:19:42.408 - [6d744f6192dae16f,6d744f6192dae16f,,http-nio-8080-exec-1,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 14:19:42.414 - [6d744f6192dae16f,6d744f6192dae16f,,http-nio-8080-exec-1,ERROR,handleCustomException] - Parameter value [876] did not match expected type [java.lang.String (n/a)]; nested exception is java.lang.IllegalArgumentException: Parameter value [876] did not match expected type [java.lang.String (n/a)]
+2022-10-19 14:19:42.465 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 14:19:42.470 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=18]
+2022-10-19 14:19:42.560 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: Message=Parameter value [876] did not match expected type [java.lang.String (n/a)]; nested exception is java.lang.IllegalArgumentException: Parameter value [876] did not match expected type [java.lang.String (n/a)] : in class=org.springframework.orm.jpa.EntityManagerFactoryUtils : method=convertJpaAccessExceptionIfPossible : line=373
+2022-10-19 14:21:12.692 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 14:21:36.295 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 14:21:56.813 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 14:21:56.816 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 14:22:09.421 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 35.339 seconds (JVM running for 36.422)
+2022-10-19 14:22:44.347 - [2ee20aeb2ef5f353,2ee20aeb2ef5f353,,http-nio-8080-exec-1,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666164164346
+2022-10-19 14:22:44.434 - [2ee20aeb2ef5f353,2ee20aeb2ef5f353,,http-nio-8080-exec-1,INFO,getConfigContentDetailsByNCBSProfession] - typeTypeOfIndustry typeOfIndustry : IDprofession 876
+2022-10-19 14:22:44.445 - [2ee20aeb2ef5f353,2ee20aeb2ef5f353,,http-nio-8080-exec-1,INFO,getConfigContentDetailsByNCBSProfession] - onboardingTypeOfIndustryList [] 
+2022-10-19 14:22:44.489 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 14:22:44.494 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=18]
+2022-10-19 14:22:44.584 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: null
+2022-10-19 14:36:02.433 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 14:36:17.243 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 14:36:17.247 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 14:36:32.183 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 31.613 seconds (JVM running for 32.69)
+2022-10-19 14:36:36.103 - [ccc7b26d44df3b79,ccc7b26d44df3b79,,http-nio-8080-exec-2,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666164996103
+2022-10-19 14:36:36.201 - [ccc7b26d44df3b79,ccc7b26d44df3b79,,http-nio-8080-exec-2,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@1f728570
+2022-10-19 14:36:36.201 - [ccc7b26d44df3b79,ccc7b26d44df3b79,,http-nio-8080-exec-2,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 14:36:36.207 - [ccc7b26d44df3b79,ccc7b26d44df3b79,,http-nio-8080-exec-2,ERROR,handleCustomException] - query did not return a unique result: 2; nested exception is javax.persistence.NonUniqueResultException: query did not return a unique result: 2
+2022-10-19 14:36:36.251 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 14:36:36.256 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=18]
+2022-10-19 14:36:36.332 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: Message=query did not return a unique result: 2; nested exception is javax.persistence.NonUniqueResultException: query did not return a unique result: 2 : in class=org.springframework.orm.jpa.EntityManagerFactoryUtils : method=convertJpaAccessExceptionIfPossible : line=384
+2022-10-19 14:38:42.422 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 14:38:57.336 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 14:38:57.339 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 14:39:07.633 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 27.035 seconds (JVM running for 28.097)
+2022-10-19 14:39:11.853 - [ec379f5261584ff3,ec379f5261584ff3,,http-nio-8080-exec-2,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666165151853
+2022-10-19 14:39:11.954 - [ec379f5261584ff3,ec379f5261584ff3,,http-nio-8080-exec-2,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@715cd2b2
+2022-10-19 14:39:11.954 - [ec379f5261584ff3,ec379f5261584ff3,,http-nio-8080-exec-2,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 14:39:11.958 - [ec379f5261584ff3,ec379f5261584ff3,,http-nio-8080-exec-2,ERROR,handleCustomException] - Failed to convert from type [java.lang.Object[]] to type [com.danamon.onboarding.entity.OnboardingEkycMatrixEntity] for value '{18, 2}'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [java.lang.String] to type [com.danamon.onboarding.entity.OnboardingEkycMatrixEntity]
+2022-10-19 14:39:12.004 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 14:39:12.008 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=18]
+2022-10-19 14:39:12.078 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: Message=Failed to convert from type [java.lang.Object[]] to type [com.danamon.onboarding.entity.OnboardingEkycMatrixEntity] for value '{18, 2}'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [java.lang.String] to type [com.danamon.onboarding.entity.OnboardingEkycMatrixEntity] : in class=org.springframework.core.convert.support.ConversionUtils : method=invokeConverter : line=47
+2022-10-19 14:51:24.990 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 14:51:41.948 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 14:51:41.950 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 14:51:52.432 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 29.204 seconds (JVM running for 30.297)
+2022-10-19 14:53:07.259 - [b32758fe0223929d,b32758fe0223929d,,http-nio-8080-exec-1,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666165987259
+2022-10-19 14:53:07.439 - [b32758fe0223929d,b32758fe0223929d,,http-nio-8080-exec-1,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@7cda837
+2022-10-19 14:53:07.440 - [b32758fe0223929d,b32758fe0223929d,,http-nio-8080-exec-1,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 14:53:07.443 - [b32758fe0223929d,b32758fe0223929d,,http-nio-8080-exec-1,ERROR,handleCustomException] - Failed to convert from type [java.lang.Object[]] to type [@org.springframework.data.jpa.repository.Query com.danamon.onboarding.entity.OnboardingEkycMatrixEntity] for value '{18, 2}'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [java.lang.String] to type [@org.springframework.data.jpa.repository.Query com.danamon.onboarding.entity.OnboardingEkycMatrixEntity]
+2022-10-19 14:53:07.485 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 14:53:07.489 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=18]
+2022-10-19 14:53:07.642 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: Message=Failed to convert from type [java.lang.Object[]] to type [@org.springframework.data.jpa.repository.Query com.danamon.onboarding.entity.OnboardingEkycMatrixEntity] for value '{18, 2}'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [java.lang.String] to type [@org.springframework.data.jpa.repository.Query com.danamon.onboarding.entity.OnboardingEkycMatrixEntity] : in class=org.springframework.core.convert.support.ConversionUtils : method=invokeConverter : line=47
+2022-10-19 14:53:49.895 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 14:54:05.096 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 14:54:05.098 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 14:54:15.366 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 27.263 seconds (JVM running for 28.314)
+2022-10-19 14:54:18.357 - [60af269c3b567d03,60af269c3b567d03,,http-nio-8080-exec-2,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666166058357
+2022-10-19 14:54:18.459 - [60af269c3b567d03,60af269c3b567d03,,http-nio-8080-exec-2,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@6451b77b
+2022-10-19 14:54:18.459 - [60af269c3b567d03,60af269c3b567d03,,http-nio-8080-exec-2,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 14:54:18.463 - [60af269c3b567d03,60af269c3b567d03,,http-nio-8080-exec-2,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-10-19 14:54:18.506 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 14:54:18.510 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=18]
+2022-10-19 14:54:18.585 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.service.impl.ConfigServiceImpl : method=getConfigContentDetailsByNCBSProfession : line=1362
+2022-10-19 14:55:09.980 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 14:55:25.323 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 14:55:25.325 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 14:55:35.259 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 27.035 seconds (JVM running for 28.142)
+2022-10-19 14:55:47.469 - [4a6a8bdd60c59316,4a6a8bdd60c59316,,http-nio-8080-exec-2,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666166147469
+2022-10-19 14:55:47.558 - [4a6a8bdd60c59316,4a6a8bdd60c59316,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - typeProfession 2 : profession {}
+2022-10-19 14:55:47.570 - [4a6a8bdd60c59316,4a6a8bdd60c59316,,http-nio-8080-exec-2,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@2433f0f8
+2022-10-19 14:55:47.570 - [4a6a8bdd60c59316,4a6a8bdd60c59316,,http-nio-8080-exec-2,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 14:55:47.573 - [4a6a8bdd60c59316,4a6a8bdd60c59316,,http-nio-8080-exec-2,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-10-19 14:55:47.617 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 14:55:47.622 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=18]
+2022-10-19 14:55:47.704 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.service.impl.ConfigServiceImpl : method=getConfigContentDetailsByNCBSProfession : line=1364
+2022-10-19 14:57:21.190 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 14:57:36.252 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 14:57:36.255 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 14:57:46.288 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 26.931 seconds (JVM running for 27.992)
+2022-10-19 14:57:52.626 - [f72d7f6bc6265ed4,f72d7f6bc6265ed4,,http-nio-8080-exec-2,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666166272626
+2022-10-19 14:57:52.715 - [f72d7f6bc6265ed4,f72d7f6bc6265ed4,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - typeProfession ncbsProfession : profession 2
+2022-10-19 14:57:52.725 - [f72d7f6bc6265ed4,f72d7f6bc6265ed4,,http-nio-8080-exec-2,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@762f9dd4
+2022-10-19 14:57:52.726 - [f72d7f6bc6265ed4,f72d7f6bc6265ed4,,http-nio-8080-exec-2,ERROR,handleCustomException] - Error Track is:::-------
+2022-10-19 14:57:52.730 - [f72d7f6bc6265ed4,f72d7f6bc6265ed4,,http-nio-8080-exec-2,ERROR,handleCustomException] - There was an Error trying to retrieve the data
+2022-10-19 14:57:52.771 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 14:57:52.776 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=18]
+2022-10-19 14:57:52.856 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: Message=null : in class=com.danamon.onboarding.service.impl.ConfigServiceImpl : method=getConfigContentDetailsByNCBSProfession : line=1364
+2022-10-19 14:58:14.909 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 14:58:29.801 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 14:58:29.803 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 14:58:39.963 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 26.913 seconds (JVM running for 28.006)
+2022-10-19 14:58:42.960 - [58ac0a6dfff461d0,58ac0a6dfff461d0,,http-nio-8080-exec-2,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666166322960
+2022-10-19 14:58:43.052 - [58ac0a6dfff461d0,58ac0a6dfff461d0,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - typeProfession profession : profession 2
+2022-10-19 14:58:43.060 - [58ac0a6dfff461d0,58ac0a6dfff461d0,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - typeTypeOfIndustry typeOfIndustry : IDprofession 701
+2022-10-19 14:58:43.070 - [58ac0a6dfff461d0,58ac0a6dfff461d0,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - onboardingTypeOfIndustryList [com.danamon.onboarding.entity.ConfigContentEntity@12741d98] 
+2022-10-19 14:58:43.131 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "code":"18"
+}
+2022-10-19 14:58:43.136 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=18]
+2022-10-19 14:58:43.222 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: null
+2022-10-19 14:59:15.876 - [2c289af8f36e35bf,2c289af8f36e35bf,,http-nio-8080-exec-3,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666166355876
+2022-10-19 14:59:15.899 - [2c289af8f36e35bf,2c289af8f36e35bf,,http-nio-8080-exec-3,INFO,getConfigContentDetailsByNCBSProfession] - typeProfession profession : profession 11
+2022-10-19 14:59:15.906 - [2c289af8f36e35bf,2c289af8f36e35bf,,http-nio-8080-exec-3,INFO,getConfigContentDetailsByNCBSProfession] - typeTypeOfIndustry typeOfIndustry : IDprofession 710
+2022-10-19 14:59:15.915 - [2c289af8f36e35bf,2c289af8f36e35bf,,http-nio-8080-exec-3,INFO,getConfigContentDetailsByNCBSProfession] - onboardingTypeOfIndustryList [com.danamon.onboarding.entity.ConfigContentEntity@5d56c8d6, com.danamon.onboarding.entity.ConfigContentEntity@3ccae53a, com.danamon.onboarding.entity.ConfigContentEntity@49c45cd7, com.danamon.onboarding.entity.ConfigContentEntity@75757e82, com.danamon.onboarding.entity.ConfigContentEntity@1e8e0882, com.danamon.onboarding.entity.ConfigContentEntity@7506dd5c, com.danamon.onboarding.entity.ConfigContentEntity@1e4f15cf, com.danamon.onboarding.entity.ConfigContentEntity@4090f9ea] 
+2022-10-19 14:59:15.974 - [,,,http-nio-8080-exec-3,INFO,getRequest] - getRequest{
+    "code":"101"
+}
+2022-10-19 14:59:15.975 - [,,,http-nio-8080-exec-3,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=101]
+2022-10-19 14:59:15.993 - [,,,http-nio-8080-exec-3,DEBUG,logRequestResponse] - Error Message: null
+2022-10-19 15:12:47.861 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 15:13:03.406 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 15:13:03.408 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 15:13:13.774 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 27.688 seconds (JVM running for 28.748)
+2022-10-19 15:13:35.737 - [48aca8a30c715c53,48aca8a30c715c53,,http-nio-8080-exec-2,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666167215737
+2022-10-19 15:13:35.824 - [48aca8a30c715c53,48aca8a30c715c53,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - typeProfession profession : profession 11
+2022-10-19 15:13:35.834 - [48aca8a30c715c53,48aca8a30c715c53,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - typeTypeOfIndustry typeOfIndustry : profession []
+2022-10-19 15:13:35.878 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "code":"101"
+}
+2022-10-19 15:13:35.882 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=101]
+2022-10-19 15:13:35.957 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: null
+2022-10-19 15:14:31.721 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 15:14:50.652 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 15:14:50.655 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 15:15:00.691 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 31.123 seconds (JVM running for 32.268)
+2022-10-19 15:15:03.245 - [6c2f5602244a03ca,6c2f5602244a03ca,,http-nio-8080-exec-2,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666167303245
+2022-10-19 15:15:03.343 - [6c2f5602244a03ca,6c2f5602244a03ca,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - typeProfession profession : profession [11, 11]
+2022-10-19 15:15:03.353 - [6c2f5602244a03ca,6c2f5602244a03ca,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - typeTypeOfIndustry typeOfIndustry : profession []
+2022-10-19 15:15:03.394 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "code":"101"
+}
+2022-10-19 15:15:03.398 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=101]
+2022-10-19 15:15:03.467 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: null
+2022-10-19 15:15:56.087 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 15:16:11.309 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 15:16:11.311 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 15:16:21.568 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 27.225 seconds (JVM running for 28.278)
+2022-10-19 15:16:24.844 - [eae39f854eedc405,eae39f854eedc405,,http-nio-8080-exec-2,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666167384844
+2022-10-19 15:16:24.947 - [eae39f854eedc405,eae39f854eedc405,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - getInternalProfessionCode 11
+2022-10-19 15:16:24.948 - [eae39f854eedc405,eae39f854eedc405,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - getInternalProfessionCode 11
+2022-10-19 15:16:24.949 - [eae39f854eedc405,eae39f854eedc405,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - typeProfession profession : profession [11, 11]
+2022-10-19 15:16:24.964 - [eae39f854eedc405,eae39f854eedc405,,http-nio-8080-exec-2,INFO,getConfigContentDetailsByNCBSProfession] - typeTypeOfIndustry typeOfIndustry : profession []
+2022-10-19 15:16:25.017 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest{
+    "code":"101"
+}
+2022-10-19 15:16:25.022 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=101]
+2022-10-19 15:16:25.110 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: null
+2022-10-19 15:21:30.803 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-10-19 15:21:48.850 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-10-19 15:21:48.853 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-10-19 15:21:58.773 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 29.766 seconds (JVM running for 30.872)
+2022-10-19 15:22:53.981 - [a5faa23eb79d1674,a5faa23eb79d1674,,http-nio-8080-exec-1,INFO,getConfigContentByNCBSProfession] - Entered in method-getConfigContentByProfession of class-ConfigController at 1666167773981
+2022-10-19 15:22:54.066 - [a5faa23eb79d1674,a5faa23eb79d1674,,http-nio-8080-exec-1,INFO,getConfigContentDetailsByNCBSProfession] - typeProfession profession : profession 11
+2022-10-19 15:22:54.073 - [a5faa23eb79d1674,a5faa23eb79d1674,,http-nio-8080-exec-1,INFO,getConfigContentDetailsByNCBSProfession] - typeTypeOfIndustry typeOfIndustry : IDprofession 710
+2022-10-19 15:22:54.086 - [a5faa23eb79d1674,a5faa23eb79d1674,,http-nio-8080-exec-1,INFO,getConfigContentDetailsByNCBSProfession] - onboardingTypeOfIndustryList [com.danamon.onboarding.entity.ConfigContentEntity@2129b6cb, com.danamon.onboarding.entity.ConfigContentEntity@676fc038, com.danamon.onboarding.entity.ConfigContentEntity@556d694c, com.danamon.onboarding.entity.ConfigContentEntity@3e135175, com.danamon.onboarding.entity.ConfigContentEntity@52e03792, com.danamon.onboarding.entity.ConfigContentEntity@4b1743f6, com.danamon.onboarding.entity.ConfigContentEntity@758e64d1, com.danamon.onboarding.entity.ConfigContentEntity@51321bec] 
+2022-10-19 15:22:54.184 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest{
+    "code":"101"
+}
+2022-10-19 15:22:54.189 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: Fetching Config Content by NCBSProfession|Fetching Address by City = ProfessionCodeVO [code=101]
+2022-10-19 15:22:54.255 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: null

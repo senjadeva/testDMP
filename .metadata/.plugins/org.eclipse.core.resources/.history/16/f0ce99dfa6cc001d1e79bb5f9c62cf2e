@@ -1,0 +1,81 @@
+package com.test.controller;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.test.entity.TestDMPLoginRequest;
+import com.test.entity.TestDMPLoginResponse;
+import com.test.entity.TestDMPResponse;
+import com.test.service.TestDMPService;
+
+@RestController
+public class TestDNSController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(TestDMPController.class);
+	
+	@Autowired
+	private TestDMPService testDMPService;
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ResponseEntity<TestDMPLoginResponse> bulkUpload(
+			@RequestBody TestDMPLoginRequest req) throws Exception {
+
+		logger.info("Entered in method-bulkUpload of class-BulkUploadController at {}", System.currentTimeMillis());
+
+
+		return new ResponseEntity<TestDMPLoginResponse>(testDMPService.login(req), HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/recruitment", method = RequestMethod.GET)
+	public ResponseEntity<List<TestDMPResponse>> getRecruitment() throws Exception {
+		
+		logger.info("Masuk 1");
+		
+		List<TestDMPResponse> payload = testDMPService.getRecruitment();
+
+		return new ResponseEntity<List<TestDMPResponse>>(payload, HttpStatus.OK);
+
+	}
+	
+	@RequestMapping(value = "/recruitment/{ID}", method = RequestMethod.GET)
+	public ResponseEntity<TestDMPResponse> getOneRecruitment(@PathVariable String ID) throws Exception {
+		
+		TestDMPResponse payload = testDMPService.getOneRecruitment(ID);
+
+		return new ResponseEntity<TestDMPResponse>(payload, HttpStatus.OK);
+
+	}
+	
+	@GetMapping(path = "/recruitment/report")
+	public ResponseEntity<String> getReportRecruitment() throws Exception {
+
+		logger.debug("Entering OnBoardingReportController in viewCustomerStatusReport method");
+
+		String data = testDMPService.getReportRecruitment();
+		
+		String fileName = String.format("ReportRecruitment").concat(".csv");
+		
+		HttpHeaders headers = new HttpHeaders();
+		headers.set(HttpHeaders.CONTENT_DISPOSITION, String.format("attachment; filename=\"%s\"", fileName));
+		headers.setContentLength(data.length());
+		headers.setContentType(MediaType.parseMediaType("text/csv"));
+
+		ResponseEntity<String> response = ResponseEntity.ok().headers(headers).body(data);
+		return response;
+	}
+	
+	
+}

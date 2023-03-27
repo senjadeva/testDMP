@@ -1,0 +1,192 @@
+2023-03-18 20:28:40.505 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-18 20:29:01.355 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-18 20:29:01.358 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-18 20:29:03.501 - [,,,main,ERROR,report] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field testDMPService in com.danamon.onboarding.controller.TestDNSController required a bean of type 'com.danamon.onboarding.service.TestDMPService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.danamon.onboarding.service.TestDMPService' in your configuration.
+
+2023-03-18 21:08:59.774 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-18 21:09:57.650 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-18 21:09:57.653 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-18 21:09:58.804 - [,,,main,ERROR,reportFailure] - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configController': Unsatisfied dependency expressed through field 'configService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'request-timeout' in value "${request-timeout}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.danamon.onboarding.ConfigServiceApplication.main(ConfigServiceApplication.java:20)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'request-timeout' in value "${request-timeout}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:380)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'request-timeout' in value "${request-timeout}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:851)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	... 30 common frames omitted
+2023-03-18 21:10:30.462 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-18 21:11:14.843 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-18 21:11:14.846 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-18 21:11:16.391 - [,,,main,ERROR,report] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field testDMPService in com.danamon.onboarding.controller.TestDNSController required a bean of type 'com.danamon.onboarding.service.TestDMPService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.danamon.onboarding.service.TestDMPService' in your configuration.
+
+2023-03-18 21:12:17.647 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-18 21:13:02.004 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-18 21:13:02.007 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-18 21:13:14.320 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 60.622 seconds (JVM running for 61.956)
+2023-03-19 06:07:39.421 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-19 06:08:14.850 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-19 06:08:14.854 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-19 06:08:40.556 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-19 06:09:13.477 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-19 06:09:13.481 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-19 06:09:28.738 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 54.152 seconds (JVM running for 56.353)
+2023-03-19 06:12:14.125 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-19 06:12:53.381 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-19 06:12:53.389 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-19 06:13:22.381 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 74.356 seconds (JVM running for 76.461)
+2023-03-19 06:14:24.290 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-19 06:14:58.557 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-19 06:14:58.561 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-19 06:15:18.228 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 59.355 seconds (JVM running for 61.435)
+2023-03-19 06:15:23.674 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest
+2023-03-19 06:15:23.676 - [,,,http-nio-8080-exec-1,ERROR,logRequestResponse] - userId is not Long type: null,
+2023-03-19 06:15:24.754 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: null
+2023-03-19 06:15:24.756 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: null
+2023-03-19 06:16:52.519 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-19 06:17:28.575 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-19 06:17:28.581 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-19 06:17:58.244 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 71.799 seconds (JVM running for 74.266)
+2023-03-19 06:19:33.519 - [,,,http-nio-8080-exec-2,INFO,getRequest] - getRequest
+2023-03-19 06:19:33.522 - [,,,http-nio-8080-exec-2,ERROR,logRequestResponse] - userId is not Long type: null,
+2023-03-19 06:19:33.786 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Audit Message: null
+2023-03-19 06:19:33.787 - [,,,http-nio-8080-exec-2,DEBUG,logRequestResponse] - Error Message: null
+2023-03-19 09:45:14.327 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-19 09:45:45.502 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-19 09:45:45.504 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-19 09:45:57.966 - [,,,main,ERROR,report] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2023-03-19 09:46:12.909 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-19 09:46:39.801 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-19 09:46:39.804 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-19 09:46:52.405 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 43.424 seconds (JVM running for 44.692)
+2023-03-19 09:46:55.617 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest
+2023-03-19 09:46:55.619 - [,,,http-nio-8080-exec-1,ERROR,logRequestResponse] - userId is not Long type: null,
+2023-03-19 09:46:55.947 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: null
+2023-03-19 09:46:55.947 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: null
+2023-03-19 09:47:21.793 - [,,,http-nio-8080-exec-3,INFO,getRequest] - getRequest
+2023-03-19 09:47:21.794 - [,,,http-nio-8080-exec-3,ERROR,logRequestResponse] - userId is not Long type: null,
+2023-03-19 09:47:21.872 - [,,,http-nio-8080-exec-3,DEBUG,logRequestResponse] - Audit Message: null
+2023-03-19 09:47:21.873 - [,,,http-nio-8080-exec-3,DEBUG,logRequestResponse] - Error Message: null
+2023-03-19 09:48:31.798 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-19 09:48:58.996 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-19 09:48:58.999 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-19 09:49:11.240 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 43.318 seconds (JVM running for 44.585)
+2023-03-19 09:51:34.996 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest
+2023-03-19 09:51:34.998 - [,,,http-nio-8080-exec-1,ERROR,logRequestResponse] - userId is not Long type: null,
+2023-03-19 09:51:35.142 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: null
+2023-03-19 09:51:35.142 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: null
+2023-03-19 09:54:23.532 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-19 09:54:50.205 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-19 09:54:50.208 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-19 09:55:02.428 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 42.732 seconds (JVM running for 44.012)
+2023-03-19 09:55:07.388 - [6367c6a0981b9054,6367c6a0981b9054,,http-nio-8080-exec-1,INFO,getRecruitment] - Masuk 1
+2023-03-19 09:55:07.389 - [6367c6a0981b9054,6367c6a0981b9054,,http-nio-8080-exec-1,INFO,getRecruitment] - Masuk 2
+2023-03-19 09:55:07.438 - [6367c6a0981b9054,6367c6a0981b9054,,http-nio-8080-exec-1,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@5f92f03f
+2023-03-19 09:55:07.438 - [6367c6a0981b9054,6367c6a0981b9054,,http-nio-8080-exec-1,ERROR,handleCustomException] - Error Track is:::-------
+2023-03-19 09:55:07.442 - [6367c6a0981b9054,6367c6a0981b9054,,http-nio-8080-exec-1,ERROR,handleCustomException] - sun.net.www.protocol.http.HttpURLConnection cannot be cast to javax.net.ssl.HttpsURLConnection
+2023-03-19 09:55:07.525 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest
+2023-03-19 09:55:07.526 - [,,,http-nio-8080-exec-1,ERROR,logRequestResponse] - userId is not Long type: null,
+2023-03-19 09:55:07.637 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: null
+2023-03-19 09:55:07.637 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: Message=sun.net.www.protocol.http.HttpURLConnection cannot be cast to javax.net.ssl.HttpsURLConnection : in class=com.danamon.onboarding.service.impl.TestDMPServiceImpl : method=getRecruitment : line=45
+2023-03-19 09:56:57.355 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-19 09:57:23.971 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-19 09:57:23.973 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-19 09:57:36.703 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 43.32 seconds (JVM running for 44.609)
+2023-03-19 09:57:40.388 - [7121350182588f14,7121350182588f14,,http-nio-8080-exec-1,INFO,getRecruitment] - Masuk 1
+2023-03-19 09:57:40.390 - [7121350182588f14,7121350182588f14,,http-nio-8080-exec-1,INFO,getRecruitment] - Masuk 2
+2023-03-19 09:58:01.931 - [7121350182588f14,7121350182588f14,,http-nio-8080-exec-1,INFO,handleCustomException] - GlobalExceptionHandler HttpServletRequest request :org.springframework.web.util.ContentCachingRequestWrapper@7d2041e4
+2023-03-19 09:58:01.933 - [7121350182588f14,7121350182588f14,,http-nio-8080-exec-1,ERROR,handleCustomException] - Error Track is:::-------
+2023-03-19 09:58:01.951 - [7121350182588f14,7121350182588f14,,http-nio-8080-exec-1,ERROR,handleCustomException] - Connection timed out: connect
+2023-03-19 09:58:02.035 - [,,,http-nio-8080-exec-1,INFO,getRequest] - getRequest
+2023-03-19 09:58:02.036 - [,,,http-nio-8080-exec-1,ERROR,logRequestResponse] - userId is not Long type: null,
+2023-03-19 09:58:02.173 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Audit Message: null
+2023-03-19 09:58:02.174 - [,,,http-nio-8080-exec-1,DEBUG,logRequestResponse] - Error Message: Message=Connection timed out: connect : in class=java.net.DualStackPlainSocketImpl : method=connect0 : line=-2
+2023-03-19 10:07:46.094 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2023-03-19 10:08:19.118 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2023-03-19 10:08:19.121 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2023-03-19 10:08:31.476 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 49.342 seconds (JVM running for 50.639)

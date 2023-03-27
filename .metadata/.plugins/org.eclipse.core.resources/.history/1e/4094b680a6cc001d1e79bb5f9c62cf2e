@@ -1,0 +1,8 @@
+2022-09-07 16:32:35.120 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-09-07 16:32:46.534 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-09-07 16:32:46.536 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-09-07 16:32:56.378 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 23.032 seconds (JVM running for 24.091)
+2022-09-07 16:33:53.872 - [,,,main,INFO,logStartupProfileInfo] - The following profiles are active: configservice
+2022-09-07 16:34:11.779 - [,,,main,DEBUG,init] - Filter 'audit' configured for use
+2022-09-07 16:34:11.782 - [,,,main,DEBUG,init] - Filter 'auditFilter' configured for use
+2022-09-07 16:34:21.596 - [,,,main,INFO,logStarted] - Started ConfigServiceApplication in 29.463 seconds (JVM running for 30.527)

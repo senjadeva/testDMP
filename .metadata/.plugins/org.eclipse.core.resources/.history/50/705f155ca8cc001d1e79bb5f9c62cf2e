@@ -1,0 +1,192 @@
+package com.test.service.impl;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.test.entity.TestDMPEntity;
+import com.test.entity.TestDMPLoginRequest;
+import com.test.entity.TestDMPLoginResponse;
+import com.test.entity.TestDMPResponse;
+import com.test.repository.TestDMPRepository;
+import com.test.service.TestDMPService;
+
+@Service
+public class TestDMPServiceImpl implements TestDMPService {
+
+	private static final Logger logger = LoggerFactory.getLogger(TestDMPServiceImpl.class);
+	
+	@Autowired
+	private TestDMPRepository testDMPRepository;
+
+	@Override
+	public List<TestDMPResponse> getRecruitment() throws IOException {
+		
+		logger.info("Masuk 2");
+
+		URL url = new URL("http://dev3.dansmultipro.co.id/api/recruitment/positions.json");
+		
+		HttpURLConnection connect = (HttpURLConnection) url.openConnection();
+		
+		List<TestDMPResponse> responses = new ArrayList<TestDMPResponse>();
+		
+		if(connect.getResponseCode() == 200) {
+			InputStream is = connect.getInputStream();
+			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+			StringBuffer sb = new StringBuffer();
+			String line = br.readLine();
+			while (line != null) {
+				line = br.readLine();
+				sb.append(line);
+				logger.info("line {}", line);
+
+			}
+			
+			JSONObject myresponse = new JSONObject(sb.toString());
+			
+			TestDMPResponse response = new TestDMPResponse();
+			response.setId(myresponse.getString("id"));
+			response.setCompany(myresponse.getString("company"));
+			response.setCompanyUrl(myresponse.getString("company_url"));
+			response.setCreatedId(myresponse.getString("company_id"));
+			response.setDescription(myresponse.getString("description"));
+			response.setLocation(myresponse.getString("location"));
+			response.setTitle(myresponse.getString("title"));
+			response.setType(myresponse.getString("type"));
+			response.setUrl(myresponse.getString("url"));
+			
+			responses.add(response);
+		}
+		
+		return responses;
+	}
+	
+	@Override
+	public TestDMPResponse getOneRecruitment(String id) throws IOException {
+
+		URL url = new URL("http://dev3.dansmultipro.co.id/api/recruitment/positions/"+ id);
+		
+		HttpURLConnection connect = (HttpURLConnection) url.openConnection();
+		
+		TestDMPResponse response = new TestDMPResponse();
+		
+		if(connect.getResponseCode() == 200) {
+			InputStream is = connect.getInputStream();
+			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+			StringBuffer sb = new StringBuffer();
+			String line = br.readLine();
+			while (line != null) {
+				line = br.readLine();
+				sb.append(line);
+				logger.info("line {}", line);
+
+			}
+			
+			JSONObject myresponse = new JSONObject(sb.toString());
+			
+			
+			response.setId(myresponse.getString("id"));
+			response.setCompany(myresponse.getString("company"));
+			response.setCompanyUrl(myresponse.getString("company_url"));
+			response.setCreatedId(myresponse.getString("company_id"));
+			response.setDescription(myresponse.getString("description"));
+			response.setLocation(myresponse.getString("location"));
+			response.setTitle(myresponse.getString("title"));
+			response.setType(myresponse.getString("type"));
+			response.setUrl(myresponse.getString("url"));
+		}
+		
+		return response;
+	}
+	
+	@Override
+	public String getReportRecruitment() throws IOException {
+
+		URL url = new URL("http://dev3.dansmultipro.co.id/api/recruitment/positionspositions.json");
+		
+		HttpURLConnection connect = (HttpURLConnection) url.openConnection();
+		
+		List<Map<String, Object>> data = new ArrayList<>();
+		
+		if(connect.getResponseCode() == 200) {
+			InputStream is = connect.getInputStream();
+			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+			StringBuffer sb = new StringBuffer();
+			String line = br.readLine();
+			while (line != null) {
+				line = br.readLine();
+				sb.append(line);
+				logger.info("line {}", line);
+
+			}
+			
+			JSONObject myresponse = new JSONObject(sb.toString());
+			
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("id", myresponse.getString("id"));
+			map.put("company",myresponse.getString("company"));
+			map.put("company_url",myresponse.getString("company_url"));
+			map.put("company_id",myresponse.getString("company_id"));
+			map.put("description",myresponse.getString("description"));
+			map.put("location",myresponse.getString("location"));
+			map.put("title",myresponse.getString("title"));
+			map.put("type",myresponse.getString("type"));
+			map.put("url",myresponse.getString("url"));
+			data.add(map);
+		}
+		
+		return this.resultToCsvFormat("Report Recruitment", data);
+	}
+	
+	@Override
+	public String resultToCsvFormat(String header, List<Map<String, Object>> data) {
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append(header);
+		sb.append("\n");
+		
+		data.stream()
+		.forEach((each) -> {
+			for(String key : each.keySet()) {
+				String val = each.get(key)  != null ? each.get(key).toString() : "";
+				
+				if(val.indexOf(",") >= 0)
+					val = "\"".concat(val).concat("\"");
+					
+				sb.append(val);
+				sb.append(",");
+			}
+			
+			sb.append("\n");
+		});
+		
+		return sb.toString().replaceAll(",\n","\n");
+	}
+
+	@Override
+	public TestDMPLoginResponse login(TestDMPLoginRequest req) {
+		
+		TestDMPEntity user = testDMPRepository.findOneByUsernameAndPassword(req.getUsername(), req.getPassword());
+		
+		TestDMPLoginResponse response = new TestDMPLoginResponse();
+		response.setIsMatch(false);
+		
+		if(user != null) {
+			response.setIsMatch(true);
+		}
+
+		return response;
+	}
+}

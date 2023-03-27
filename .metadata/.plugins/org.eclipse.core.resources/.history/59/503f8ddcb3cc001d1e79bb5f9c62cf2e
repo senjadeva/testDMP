@@ -1,0 +1,51 @@
+server:
+  servlet:
+    context-path: /config/api/dev
+---
+spring:
+  profiles: configservice
+  name: configservice-YAML
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    type: org.apache.tomcat.jdbc.pool.DataSource
+    tomcat:
+      max-active: 500
+      max-idle: 5
+      min-idle: 2
+      initial-size: 2
+      test-on-connect: true
+      test-on-borrow: true
+      validation-query: SELECT 1
+      validation-interval: 15000
+      remove-abandoned: true
+      remove-abandoned-timeout: 30
+      max-age: 300000
+    platform: postgres
+  jpa:
+    generate-ddl: false
+    database: default
+    database-platform : com.test.dialect.MyPostgreSQL94Dialect
+    hibernate:
+      show_sql: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+  main:
+    allow-bean-definition-overriding: true
+---
+postgres:
+  config:
+    timeout: 600
+---
+environment: dev
+---
+jasypt:
+  encryptor:
+    password: bD4n4M0N^2OI7@
+---
+logging:
+  level:
+    org.apache.tomcat.jdbc.pool: debug
